@@ -1,20 +1,19 @@
 function updateContent() {
-    let hash = window.location.hash.substring(2)
+    let hash = window.location.hash.substring(2);
     let parts = hash.split('/');
 
     if (parts.length === 4) {
         let [carrier, state, lob, page] = parts;
         document.getElementById('output').innerHTML = `
-            <h2>Carrier: ${carrier}</h2>
-            <h2>State: ${state}</h2>
-            <h2>LOB: ${lob}</h2>
-            <h2>Page: ${page}</h2>
+            <p>Carrier: ${carrier}</p>
+            <p>State: ${state}</p>
+            <p>LOB: ${lob}</p>
+            <p>Page: ${page}</p>
         `;
     } else {
-        document.getElementById('output').innerHTML = `<h2>Invalid URL format</h2>`;
+        document.getElementById('output').innerHTML = "";
     }
 }
 
 window.addEventListener('hashchange', updateContent);
-
 updateContent();
