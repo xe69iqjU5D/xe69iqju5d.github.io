@@ -4,6 +4,8 @@ function updateContent() {
 
     if (parts.length === 4) {
         let [carrier, state, lob, page] = parts;
+
+        document.getElementById('construction-message').style.display = "none";
         document.getElementById('output').innerHTML = `
             <p>Carrier: ${carrier}</p>
             <p>State: ${state}</p>
@@ -11,6 +13,7 @@ function updateContent() {
             <p>Page: ${page}</p>
         `;
     } else {
+        document.getElementById('construction-message').style.display = "block";
         document.getElementById('output').innerHTML = "";
     }
 }
